@@ -22,7 +22,7 @@ var headlineSchema = new Schema({
     type: Boolean,
     default: false
   }
-}, { autoCreate: true, capped: 1024 });
+}, { autoIndex: true, autoCreate: true });
 var Headline = mongoose.model("Headline", headlineSchema);
 
 

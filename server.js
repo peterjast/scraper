@@ -32,13 +32,13 @@ app.use(express.static("public"));
 app.use(routes);
 
 // Use the deployed database or local
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://heroku_br7k43dz:8nhmnth9f8qf27hqfaj21dl61@ds153566.mlab.com:53566/heroku_br7k43dz";
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://heroku_br7k43dz:8nhmnth9f8qf27hqfaj21dl61@ds153566.mlab.com:53566/heroku_br7k43dz", {
+    useCreateIndex: true,
+    useNewUrlParser: true
+  }
+);
 
-// Connect to the Mongo DB
-mongoose.connect(MONGODB_URI, {
-  useCreateIndex: true,
-  useNewUrlParser: true
-});
 
 // Listen on the port
 app.listen(PORT, function() {

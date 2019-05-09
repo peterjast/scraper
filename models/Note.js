@@ -10,6 +10,6 @@ var noteSchema = new Schema({
     default: Date.now
   },
   noteText: String
-}, { autoCreate: true, capped: 1024 });
+}, { autoIndex: true, autoCreate: true });
 var Note = mongoose.model("Note", noteSchema);
 module.exports = Note;
