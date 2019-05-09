@@ -1,36 +1,32 @@
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">NY Times Scraper</a>
-    </div><!-- /.navbar-header -->
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="/">Latest Headlines</a></li>
-      <li><a href="/saved">Saved Articles</a></li>
-    </ul>
-      <a class="btn btn-primary navbar-btn scrape-new">SCRAPE NEW ARTICLES</a>
-    
-  </div>
-</nav>
-<div class="text-center">
-  <div class="overlay">
-  </div>
-  <div class="background-image">
-  </div>
-  <div class="caption">
-    <h1>New York Times Headline Scraper</h1>
-    <h3>Articles from the The NY Times</h3>
-  </div>
-</div>
-<div class="container-fluid article-container">
-</div>
+<!--Homepage-->
+<div class="container">
+    <div class="col-md-12 jumbotron">
+        <div class="text-center">
+            <h1> New York Times Scraper</h1>
+        </div>
 
-<footer class="footer">
-  <div class="container">
-    <p>The NY Times Mongo Scraper</p>
-  </div>
-</footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
-<script src="../../assets/javascript/index.js"></script>
+    </div>
+    <div class="col-md-12">
+        {{#if article}}
+            {{#each article}}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>{{this.title}}</h4>
+                </div>
+                <div class="panel-body">
+                    <p> {{this.summary}}</p>
+                    <a href={{this.link}} target="_blank">{{this.link}}</a>
+                    <br><br>
+                    <button type="button" class="btn btn-primary save" data-id={{this._id}}>Save Article</button>
+                </div>
+            </div>
+            {{/each}}
+        {{else}}
+        <div class="panel panel-default">
+            <div class="panel-body">
+            <h4>There are no new articles available. Try again later!</h4>
+            </div>
+         </div>
+        {{/if}}
+    </div>
+</div>
