@@ -19,4 +19,4 @@ This application scrapes New York Times articles using mongoose and mongoDB.
     * Users have the option to save articles or click on the provided link to read the article
     * Once an article is saved, users can add notes or delete saved articles via the saved articles page
 
-## Link to deployed app: [https://still-caverns-28024.herokuapp.com/](https://still-caverns-28024.herokuapp.com/)
+## Link to deployed app: [https://scrapethenewyorktimes.herokuapp.com/](https://scrapethenewyorktimes.herokuapp.com/)
