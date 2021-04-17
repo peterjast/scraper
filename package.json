@@ -31,5 +31,8 @@
   },
   "engine": {
     "node": "^12.22.1"
+  },
+  "devDependencies": {
+    "handlebars": "^4.7.7"
   }
 }
