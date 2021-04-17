@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/peterjast/scraper#readme",
   "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.3",
     "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.6",
     "express": "^4.17.1",

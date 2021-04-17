@@ -5,6 +5,7 @@ var mongoose = require("mongoose");
 var logger = require("morgan");
 var path = require("path");
 
+const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
 // Scraping tools
 var request = require("request");
 var cheerio = require("cheerio");
@@ -25,14 +26,15 @@ app.use(express.static("public"));
 // Connect Handlebars to Express app
 app.engine("handlebars", exphbs({
   defaultLayout: "main",
-  partialsDir: path.join(__dirname, "/views/layouts/partials")
+  partialsDir: path.join(__dirname, "/views/layouts/partials"),
+  handlebars: allowInsecurePrototypeAccess(Handlebars)
 }));
 app.set("view engine", "handlebars");
 
 // Use morgan logger for logging requests
 app.use(logger("dev"));
 // Parse request body as JSON
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Make public a static folder
 app.use(express.static("public"));
