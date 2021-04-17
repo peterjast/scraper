@@ -40,11 +40,8 @@ app.use(express.static("public"));
 mongoose.Promise = Promise;
 
 // Use the deployed database or local
-mongoose.connect("mongodb://heroku_br7k43dz:8nhmnth9f8qf27hqfaj21dl61@ds153566.mlab.com:53566/heroku_br7k43dz",
-{
-  useCreateIndex: true,
-  useNewUrlParser: true
-});
+mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useUnifiedTopology: true});
+
 
 
 var db = mongoose.connection;
