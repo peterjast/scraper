@@ -40,8 +40,7 @@ app.use(express.static("public"));
 mongoose.Promise = Promise;
 
 // Use the deployed database or local
-mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useUnifiedTopology: true});
-
+mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true});
 
 
 var db = mongoose.connection;
