@@ -4,6 +4,7 @@ var exphbs = require("express-handlebars");
 var mongoose = require("mongoose");
 var logger = require("morgan");
 var path = require("path");
+const Handlebars = require('handlebars');
 
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
 // Scraping tools
